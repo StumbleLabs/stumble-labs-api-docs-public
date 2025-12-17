@@ -36,6 +36,15 @@
     :root {
       --theme-color: #42b983;
     }
+    /* Hide loading spinner after initial load */
+    .loading,
+    .sidebar-loading,
+    .sidebar .loading {
+      transition: opacity 0.3s ease;
+    }
+    .sidebar .loading[style*="display: none"] {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -47,18 +56,43 @@
       loadSidebar: true,
       subMaxLevel: 2,
       auto2top: true,
-        search: {
-          maxAge: 86400000,
-          paths: 'auto',
-          placeholder: 'Search...',
-          noData: 'No results found!'
-        },
-        pagination: {
-          previousText: '← Previous',
-          nextText: 'Next →',
-          crossChapter: true,
-          crossChapterText: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Search...',
+        noData: 'No results found!'
+      },
+      pagination: {
+        previousText: '← Previous',
+        nextText: 'Next →',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            // Hide loading spinner after content loads
+            setTimeout(function() {
+              const loading = document.querySelector('.loading');
+              if (loading) {
+                loading.style.display = 'none';
+              }
+              const sidebarLoading = document.querySelector('.sidebar-loading');
+              if (sidebarLoading) {
+                sidebarLoading.style.display = 'none';
+              }
+              // Also hide any loading indicators in the sidebar area
+              const sidebar = document.querySelector('.sidebar');
+              if (sidebar) {
+                const sidebarLoaders = sidebar.querySelectorAll('.loading, [class*="loading"]');
+                sidebarLoaders.forEach(function(loader) {
+                  loader.style.display = 'none';
+                });
+              }
+            }, 100);
+          });
         }
+      ]
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -69,4 +103,3 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 </body>
 </html>
-
