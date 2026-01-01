@@ -95,6 +95,7 @@ print(data)
       "minClientVersion": "",
       "stateFlags": 0,
       "customMapSchemaVersion": 0,
+      "objects_version" : "2",
       "propsSummary": [
         {
           "name": "spawn",

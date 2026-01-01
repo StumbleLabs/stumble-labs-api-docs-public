@@ -59,6 +59,7 @@ Technical map metadata.
 | `minClientVersion` | string | Minimum required client version (may be empty) |
 | `stateFlags` | integer | Map state flags |
 | `customMapSchemaVersion` | integer | Custom map schema version |
+| `objects_version` | string | Blob Content schema version |
 | `propsSummary` | array | Summary of props/objects used in the map |
 
 ### propsSummary[]
@@ -77,8 +78,6 @@ Array of objects summarizing the props/objects used in the map.
 | Value | Description |
 |-------|-------------|
 | `RACE` | Race - first to finish wins |
-| `SURVIVAL` | Survival - last survivor wins |
-| `HUNT` | Hunt - eliminate other players |
 
 ## Share Codes
 
@@ -131,6 +130,7 @@ Map data appears in various API responses:
     "minClientVersion": "",
     "stateFlags": 0,
     "customMapSchemaVersion": 0,
+    "objects_version" : "2",
     "propsSummary": [
       {
         "name": "spawn",
