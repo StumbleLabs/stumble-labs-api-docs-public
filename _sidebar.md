@@ -17,6 +17,14 @@
   * [Version History](/maps/versions)
 * **Leaderboards**
   * [Get Ranked Leaderboard](/leaderboards/ranked)
+* **Classic Tournaments**
+  * [Tournament Schema](/tournaments/schema)
+  * [List Tournaments](/tournaments/list)
+  * [Get Tournament by ID](/tournaments/get-by-id)
+  * [List Seasons](/tournaments/seasons)
+  * [Stats](/tournaments/stats)
+  * [Tournaments Won by Player](/tournaments/winners-by-player)
+  * [Winners Leaderboard](/tournaments/leaderboard-winners)
 * **Assets**
   * [Asset Schema](/assets/schema)
   * [Search Asset](/assets/search)
