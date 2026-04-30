@@ -27,5 +27,8 @@
   * [Winners Leaderboard](/tournaments/leaderboard-winners)
 * **Assets**
   * [Asset Schema](/assets/schema)
-  * [Search Asset](/assets/search)
+  * [Get Asset by ID](/assets/search)
+  * [List by Type](/assets/by-type)
+  * [Search by Name](/assets/search-by-name)
+  * [Latest Assets](/assets/latest)
   * [Get Allowed Assets](/assets/allowed)
