@@ -6,6 +6,8 @@
   * [Player Schema](/players/schema)
   * [Search Player](/players/search)
   * [Search by Discord ID](/players/search-discord)
+* **Player Verification**
+  * [Overview & Flow](/player-verification)
 * **Clans**
   * [Clan Schema](/clans/schema)
   * [Search Clans](/clans/search)
