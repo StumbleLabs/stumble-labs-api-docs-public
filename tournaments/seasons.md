@@ -68,5 +68,5 @@ curl "https://api.stumblelabs.net/api/tournaments/classic/seasons" \
 
 ## Notes
 
-- Sorted by `season DESC, seasonPart DESC` — newest first.
+- Sorted by `season DESC, seasonPart DESC` (newest first).
 - Tournaments without a season are excluded.

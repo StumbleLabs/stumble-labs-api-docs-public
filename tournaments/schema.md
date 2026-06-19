@@ -92,7 +92,7 @@ Standard schema for the classic tournament objects returned by the
 
 #### prizes.distribution[]
 
-Each entry awards one **placement bracket**. Positions are **not contiguous** —
+Each entry awards one **placement bracket**. Positions are **not contiguous**;
 they represent the lowest-placed player in the bracket. Example: a tournament
 might pay positions `1`, `2`, `4`, `8`, `16`, `32`... meaning everyone from 3rd
 to 4th place gets the position-4 reward, 5th–8th get the position-8 reward,
@@ -266,7 +266,7 @@ and so on.
 ```
 
 > `prizes.distribution[]` and `emotes.*` arrays are **truncated** in the
-> example above for readability — real responses contain the full lists.
+> example above for readability; real responses contain the full lists.
 
 ## Notes
 

@@ -73,7 +73,7 @@ curl -G "https://api.stumblelabs.net/api/live/assets/latest" \
 | `count` | integer | Number of items returned (≤ `limit`) |
 
 > Unlike paginated endpoints, this one returns a flat `{ items, count }`
-> shape — there's no `total` / `page` envelope.
+> shape; there's no `total` / `page` envelope.
 
 ## Error Responses
 

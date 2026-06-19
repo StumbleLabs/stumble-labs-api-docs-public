@@ -84,7 +84,7 @@ curl -G "https://api.stumblelabs.net/api/clans/01K1JZ400449Q1TZERE9E719Y1/member
 | `firstCapturedAt` | string\|null | Timestamp of the first snapshot (ISO 8601) |
 | `lastCapturedAt` | string\|null | Timestamp of the last snapshot (ISO 8601) |
 | `trackingStartedAfterSeasonStart` | boolean\|null | `true` if the first snapshot was recorded more than a minute after the season started (i.e., early contribution may be missing) |
-| `snapshots` | array | Snapshot history — present only when `includeSnapshots=true` |
+| `snapshots` | array | Snapshot history, present only when `includeSnapshots=true` |
 
 ### snapshots[]
 

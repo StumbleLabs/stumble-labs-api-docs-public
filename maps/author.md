@@ -24,14 +24,16 @@ GET /maps/author/{authorUserId}
 
 ## Request Example
 
-### cURL
+<!-- tabs:start -->
+
+#### **cURL**
 
 ```bash
 curl -X GET "https://api.stumblelabs.net/api/maps/author/193589871" \
   -H "x-api-key: your-api-key-here"
 ```
 
-### JavaScript (Fetch)
+#### **JavaScript**
 
 ```javascript
 const response = await fetch('https://api.stumblelabs.net/api/maps/author/193589871', {
@@ -45,7 +47,7 @@ const data = await response.json();
 console.log(data);
 ```
 
-### Python (requests)
+#### **Python**
 
 ```python
 import requests
@@ -59,6 +61,8 @@ response = requests.get(url, headers=headers)
 data = response.json()
 print(data)
 ```
+
+<!-- tabs:end -->
 
 ## Success Response (200)
 

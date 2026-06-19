@@ -98,5 +98,5 @@ are standard across all paginated endpoints.
 - The `search` parameter supports phrases, `OR`, and `-exclusion` syntax
   (web-style search).
 - `region` matches both the tournament's primary region and any region in its
-  full region list — passing `EU` returns tournaments where EU is primary or
+  full region list; passing `EU` returns tournaments where EU is primary or
   among the available regions.

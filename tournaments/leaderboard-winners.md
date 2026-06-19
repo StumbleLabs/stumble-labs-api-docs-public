@@ -123,7 +123,7 @@ That is, the first-place pool of the **first listed item** (typically gems),
 divided equally among the team members. `estimatedPrize` is the sum of all such
 shares for the matching tournaments.
 
-> Multi-currency rewards are not aggregated — only the first item of position 1
+> Multi-currency rewards are not aggregated; only the first item of position 1
 > contributes to `estimatedPrize`.
 > Idk if my calc related to estimatedPrize is right but ok.
 

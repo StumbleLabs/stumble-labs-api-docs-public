@@ -25,7 +25,9 @@ GET /clans/recommended
 
 ## Request Example
 
-### cURL
+<!-- tabs:start -->
+
+#### **cURL**
 
 ```bash
 curl -G "https://api.stumblelabs.net/api/clans/recommended" \
@@ -34,7 +36,7 @@ curl -G "https://api.stumblelabs.net/api/clans/recommended" \
   --data-urlencode "language=pt"
 ```
 
-### JavaScript (Fetch)
+#### **JavaScript**
 
 ```javascript
 const params = new URLSearchParams({ region: 'SA', language: 'pt' });
@@ -49,7 +51,7 @@ const data = await response.json();
 console.log(data);
 ```
 
-### Python (requests)
+#### **Python**
 
 ```python
 import requests
@@ -62,6 +64,8 @@ response = requests.get(url, headers=headers, params=params)
 data = response.json()
 print(data)
 ```
+
+<!-- tabs:end -->
 
 ## Success Response (200)
 

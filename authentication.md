@@ -2,6 +2,9 @@
 
 Most StumbleLabs API endpoints require authentication through an API key.
 
+> [!WARNING]
+> **New API keys are not being issued.** Registration is currently closed because the maximum number of API keys has been reached. This page documents how authentication works for existing keys.
+
 ## How to Use the API Key
 
 Send your API key in the `x-api-key` header for all requests that require authentication:

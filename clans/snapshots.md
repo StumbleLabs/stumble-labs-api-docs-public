@@ -95,7 +95,7 @@ Standard pagination envelope. The `items` array contains one entry per captured 
 | `memberCapacity` | integer | Member capacity at capture time |
 | `clanXP` | integer | Total clan XP at capture time |
 | `currentStreak` | integer | Win streak at capture time |
-| `joinPolicy` | integer | Join policy at capture time — see [Clan Schema - Join Policy](/clans/schema#join-policy) |
+| `joinPolicy` | integer | Join policy at capture time, see [Clan Schema - Join Policy](/clans/schema#join-policy) |
 | `aggregates` | object | Aggregated member stats at capture time (see below) |
 
 ### aggregates

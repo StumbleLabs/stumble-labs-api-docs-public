@@ -90,8 +90,8 @@ Standard pagination envelope. The `items` array contains one entry per membershi
 |-------|------|-------------|
 | `userId` | integer | Player ID involved in the event |
 | `event` | string | Event type: `join`, `leave`, or `role_change` |
-| `roleBefore` | integer\|null | Previous role (typically only for `role_change`) — see [Clan Schema - role](/clans/schema#role) |
-| `roleAfter` | integer\|null | New role (typically only for `role_change`) — see [Clan Schema - role](/clans/schema#role) |
+| `roleBefore` | integer\|null | Previous role (typically only for `role_change`), see [Clan Schema - role](/clans/schema#role) |
+| `roleAfter` | integer\|null | New role (typically only for `role_change`), see [Clan Schema - role](/clans/schema#role) |
 | `at` | string | When the event occurred (ISO 8601) |
 
 ## Error Responses

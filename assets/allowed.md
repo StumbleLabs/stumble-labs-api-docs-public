@@ -16,13 +16,15 @@ None. This endpoint does not require any parameters.
 
 ## Request Example
 
-### cURL
+<!-- tabs:start -->
+
+#### **cURL**
 
 ```bash
 curl -X GET "https://api.stumblelabs.net/api/live/shared/allowedAssets"
 ```
 
-### JavaScript (Fetch)
+#### **JavaScript**
 
 ```javascript
 const response = await fetch('https://api.stumblelabs.net/api/live/shared/allowedAssets');
@@ -31,7 +33,7 @@ const data = await response.json();
 console.log(data);
 ```
 
-### Python (requests)
+#### **Python**
 
 ```python
 import requests
@@ -42,6 +44,8 @@ response = requests.get(url)
 data = response.json()
 print(data)
 ```
+
+<!-- tabs:end -->
 
 ## Success Response (200)
 

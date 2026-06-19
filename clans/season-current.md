@@ -18,14 +18,16 @@ GET /clans/season/current
 
 ## Request Example
 
-### cURL
+<!-- tabs:start -->
+
+#### **cURL**
 
 ```bash
 curl -X GET "https://api.stumblelabs.net/api/clans/season/current" \
   -H "x-api-key: your-api-key-here"
 ```
 
-### JavaScript (Fetch)
+#### **JavaScript**
 
 ```javascript
 const response = await fetch('https://api.stumblelabs.net/api/clans/season/current', {
@@ -39,7 +41,7 @@ const data = await response.json();
 console.log(data);
 ```
 
-### Python (requests)
+#### **Python**
 
 ```python
 import requests
@@ -51,6 +53,8 @@ response = requests.get(url, headers=headers)
 data = response.json()
 print(data)
 ```
+
+<!-- tabs:end -->
 
 ## Success Response (200)
 

@@ -79,7 +79,7 @@ envelope is standard across paginated endpoints.
 
 ## Notes
 
-- Matches both `FriendlyName` and `ID` — searching for `SKIN905` works just
+- Matches both `FriendlyName` and `ID`; searching for `SKIN905` works just
   like searching for the friendly name.
 - Match is case-insensitive substring (no fuzzy matching).
 - Use [Get Asset by ID](/assets/search) to retrieve a single asset with

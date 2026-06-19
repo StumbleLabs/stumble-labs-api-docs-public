@@ -44,7 +44,9 @@ You can search by **userId** or **username**:
 
 ## Request Example
 
-### cURL
+<!-- tabs:start -->
+
+#### **cURL**
 
 ```bash
 curl -X POST "https://api.stumblelabs.net/api/live/users/search" \
@@ -55,7 +57,7 @@ curl -X POST "https://api.stumblelabs.net/api/live/users/search" \
   }'
 ```
 
-### JavaScript (Fetch)
+#### **JavaScript**
 
 ```javascript
 const response = await fetch('https://api.stumblelabs.net/api/live/users/search', {
@@ -73,7 +75,7 @@ const data = await response.json();
 console.log(data);
 ```
 
-### Python (requests)
+#### **Python**
 
 ```python
 import requests
@@ -91,6 +93,8 @@ response = requests.post(url, json=payload, headers=headers)
 data = response.json()
 print(data)
 ```
+
+<!-- tabs:end -->
 
 ## Success Response (200)
 

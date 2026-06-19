@@ -4,54 +4,231 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StumbleLabs API - Docs</title>
-  
+
   <!-- Primary Meta Tags -->
   <meta name="title" content="StumbleLabs API - Documentation">
-  <meta name="description" content="with examples and schemas.">
-  
+  <meta name="description" content="Public API for Stumble Guys player, clan, map, leaderboard and asset data — with request examples, schemas and error references.">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://api.stumblelabs.net/docs/">
+  <meta property="og:url" content="https://docs.stumblelabs.net/">
   <meta property="og:title" content="StumbleLabs API - Public Docs">
-  <meta property="og:description" content="with examples and schemas.">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/137030862?s=400&u=a398977a9fe239be6806583a1454cfcaecd5969b&v=4">
-  <meta property="og:image:width" content="400">
-  <meta property="og:image:height" content="400">
+  <meta property="og:description" content="Public API for Stumble Guys player, clan, map, leaderboard and asset data.">
+  <meta property="og:image" content="https://docs.stumblelabs.net/stumble-labs-icon-1200x996.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="996">
   <meta property="og:image:alt" content="StumbleLabs API Documentation">
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://api.stumblelabs.net/docs/">
+  <meta property="twitter:url" content="https://docs.stumblelabs.net/">
   <meta property="twitter:title" content="StumbleLabs API - Public Docs">
-  <meta property="twitter:description" content="with examples and schemas.">
-  <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/137030862?s=400&u=a398977a9fe239be6806583a1454cfcaecd5969b&v=4">
+  <meta property="twitter:description" content="Public API for Stumble Guys player, clan, map, leaderboard and asset data.">
+  <meta property="twitter:image" content="https://docs.stumblelabs.net/stumble-labs-icon-1200x996.png">
   <meta property="twitter:image:alt" content="StumbleLabs API Documentation">
-  
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/137030862?s=400&u=a398977a9fe239be6806583a1454cfcaecd5969b&v=4">
-  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/137030862?s=400&u=a398977a9fe239be6806583a1454cfcaecd5969b&v=4">
-  
+  <link rel="icon" type="image/png" href="/stumble-labs-icon256.png">
+  <link rel="apple-touch-icon" href="/stumble-labs-icon256.png">
+
+  <!-- Fonts: Lilita One (display) + Poppins (body) — matches StumbleLabs system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Docsify base theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <!-- Set theme before render to avoid flash of wrong theme -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('sl-docs-theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', saved || 'dark');
+    })();
+  </script>
+
   <style>
+    /* ===== StumbleLabs brand tokens ===== */
     :root {
-      --theme-color: #42b983;
+      --sl-navy:       #0d1b2a;
+      --sl-panel:      #14212f;
+      --sl-panel-2:    #101c2a;
+      --sl-border:     #1f3c5c;
+      --sl-primary:    #14577b;
+      --sl-primary-2:  #2983b3;
+      --sl-link-dark:  #5aa9e0;
+      --sl-head:       #dee2e6;
+      --sl-text-dark:  #aebfd0;
+      --sl-success:    #16883b;
+      --sl-warning:    #ffcc00;
+      --sl-danger:     #ff6666;
+
+      /* Docsify accent (light mode default) */
+      --theme-color: #14577b;
     }
+
+    /* ===== Sidebar logo ===== */
+    .sidebar .app-name img,
+    .app-name-link img { width: 64px; height: 64px; margin-bottom: 6px; }
+
+    /* ===== Typography ===== */
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .app-name-link,
+    .sidebar h1, .sidebar h2,
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3 {
+      font-family: 'Lilita One', 'Poppins', sans-serif;
+      font-weight: 400;            /* Lilita One ships a single weight; prevents faux-bold */
+      letter-spacing: 0.3px;
+    }
+    /* Links: medium weight reads better than the theme's 600 */
+    .markdown-section a { font-weight: 500; }
+
+    /* ===== Theme toggle button ===== */
+    #sl-theme-toggle {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      z-index: 30;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--sl-border);
+      background: var(--sl-panel);
+      color: var(--sl-head);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    #sl-theme-toggle:hover { transform: scale(1.06); }
+    [data-theme="light"] #sl-theme-toggle {
+      background: #fff;
+      color: var(--sl-primary);
+      border-color: #e3e8ee;
+    }
+
     /* Hide loading spinner after initial load */
-    .loading,
-    .sidebar-loading,
-    .sidebar .loading {
-      transition: opacity 0.3s ease;
+    .loading, .sidebar-loading, .sidebar .loading { transition: opacity 0.3s ease; }
+    .sidebar .loading[style*="display: none"] { display: none !important; }
+
+    /* ===================================================================
+       DARK THEME (default) — matches the StumbleLabs app palette
+       =================================================================== */
+    [data-theme="dark"] { --theme-color: var(--sl-primary-2); }
+
+    [data-theme="dark"] body { background: var(--sl-navy); color: var(--sl-text-dark); }
+
+    /* Sidebar */
+    [data-theme="dark"] .sidebar {
+      background: var(--sl-panel-2);
+      border-right: 1px solid var(--sl-border);
+      color: var(--sl-text-dark);
     }
-    .sidebar .loading[style*="display: none"] {
-      display: none !important;
+    [data-theme="dark"] .sidebar .app-name-link { color: var(--sl-head); }
+    [data-theme="dark"] .sidebar ul li a { color: #c3d4e6; }
+    [data-theme="dark"] .sidebar ul li a:hover { color: var(--theme-color); }
+    [data-theme="dark"] .sidebar ul li.active > a { color: var(--theme-color); border-right: none; }
+    [data-theme="dark"] .sidebar ul li p { color: var(--sl-head); }
+
+    /* Content */
+    [data-theme="dark"] .content,
+    [data-theme="dark"] .markdown-section { color: var(--sl-text-dark); }
+    [data-theme="dark"] .markdown-section h1,
+    [data-theme="dark"] .markdown-section h2,
+    [data-theme="dark"] .markdown-section h3,
+    [data-theme="dark"] .markdown-section h4,
+    [data-theme="dark"] .markdown-section strong { color: var(--sl-head); }
+    /* Heading text lives inside <a class="anchor"><span> — override vue's #34495e */
+    [data-theme="dark"] .markdown-section .anchor span { color: var(--sl-head); }
+    [data-theme="dark"] .markdown-section h2 { border-bottom: 1px solid var(--sl-border); padding-bottom: 0.3em; }
+    [data-theme="dark"] .markdown-section a { color: var(--sl-link-dark); }
+
+    /* Inline code */
+    [data-theme="dark"] .markdown-section code {
+      background: var(--sl-panel);
+      color: #e0b07a;
     }
+    /* Code blocks */
+    [data-theme="dark"] .markdown-section pre,
+    [data-theme="dark"] .markdown-section pre > code {
+      background: var(--sl-panel-2);
+    }
+    [data-theme="dark"] .markdown-section pre::after { color: #5a708c; }
+
+    /* Tables */
+    [data-theme="dark"] .markdown-section table { border-collapse: collapse; }
+    [data-theme="dark"] .markdown-section tr { background: var(--sl-navy); border-top: 1px solid var(--sl-border); }
+    [data-theme="dark"] .markdown-section tr:nth-child(2n) { background: #11202f; }
+    [data-theme="dark"] .markdown-section th,
+    [data-theme="dark"] .markdown-section td { border: 1px solid var(--sl-border); }
+    [data-theme="dark"] .markdown-section th { color: var(--sl-head); background: var(--sl-panel); }
+
+    /* Blockquote */
+    [data-theme="dark"] .markdown-section blockquote {
+      border-left: 4px solid var(--sl-primary-2);
+      background: rgba(41, 131, 179, 0.08);
+      color: var(--sl-text-dark);
+    }
+
+    /* Search */
+    [data-theme="dark"] .search input {
+      background: var(--sl-panel-2);
+      color: var(--sl-head);
+      border: 1px solid var(--sl-border);
+    }
+    [data-theme="dark"] .search { border-bottom: 1px solid var(--sl-border); }
+    [data-theme="dark"] .search .results-panel { background: var(--sl-panel); }
+    [data-theme="dark"] .search h2 { color: var(--sl-head); }
+    [data-theme="dark"] .search .matching-post { border-bottom: 1px solid var(--sl-border); }
+    [data-theme="dark"] .search p { color: var(--sl-text-dark); }
+
+    /* Pagination */
+    [data-theme="dark"] .pagination-item-title { color: var(--sl-text-dark); }
+    [data-theme="dark"] .docsify-pagination-container { border-top: 1px solid var(--sl-border); }
+
+    /* Scrollbar (matches app) */
+    [data-theme="dark"] * { scrollbar-width: thin; scrollbar-color: var(--sl-border) #00000036; }
+    [data-theme="dark"] *::-webkit-scrollbar { width: 12px; }
+    [data-theme="dark"] *::-webkit-scrollbar-track { background: #00000036; }
+    [data-theme="dark"] *::-webkit-scrollbar-thumb {
+      background-color: var(--sl-border);
+      border-radius: 10px;
+      border: 2px solid var(--sl-navy);
+    }
+
+    /* Sidebar collapse toggle (vue.css gives it a white bg) */
+    [data-theme="dark"] .sidebar-toggle { background-color: var(--sl-panel-2); }
+    [data-theme="dark"] .sidebar-toggle:hover { background-color: var(--sl-panel); }
+    [data-theme="dark"] .sidebar-toggle .sidebar-toggle-button span { background-color: var(--sl-link-dark); }
+
+    /* Copy-code button on dark */
+    [data-theme="dark"] .docsify-copy-code-button {
+      background: var(--sl-primary) !important;
+      color: #fff !important;
+    }
+
+    /* Tabs (docsify-tabs) on dark */
+    [data-theme="dark"] .docsify-tabs__tab { color: var(--sl-text-dark); }
+    [data-theme="dark"] .docsify-tabs__tab--active {
+      color: var(--theme-color);
+      border-bottom-color: var(--theme-color);
+    }
+    [data-theme="dark"] .docsify-tabs__content { border-color: var(--sl-border); }
   </style>
 </head>
 <body>
+  <button id="sl-theme-toggle" title="Toggle light / dark" aria-label="Toggle theme">🌙</button>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'StumbleLabs Docs (few endpoints only)',
+      name: 'StumbleLabs API',
+      logo: '/stumble-labs-icon256.png',
       repo: '',
       loadSidebar: '_sidebar.md',
       alias: {
@@ -71,27 +248,41 @@
         crossChapter: true,
         crossChapterText: true,
       },
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComment: 'tab',
+      },
+      'flexible-alerts': {
+        style: 'callout'
+      },
       plugins: [
-        function(hook, vm) {
-          hook.doneEach(function() {
-            // Hide loading spinner after content loads
-            setTimeout(function() {
-              const loading = document.querySelector('.loading');
-              if (loading) {
-                loading.style.display = 'none';
-              }
-              const sidebarLoading = document.querySelector('.sidebar-loading');
-              if (sidebarLoading) {
-                sidebarLoading.style.display = 'none';
-              }
-              // Also hide any loading indicators in the sidebar area
-              const sidebar = document.querySelector('.sidebar');
-              if (sidebar) {
-                const sidebarLoaders = sidebar.querySelectorAll('.loading, [class*="loading"]');
-                sidebarLoaders.forEach(function(loader) {
-                  loader.style.display = 'none';
-                });
-              }
+        // Theme toggle wiring
+        function (hook) {
+          hook.ready(function () {
+            var btn = document.getElementById('sl-theme-toggle');
+            if (!btn) return;
+            var sync = function () {
+              var t = document.documentElement.getAttribute('data-theme');
+              btn.textContent = t === 'dark' ? '🌙' : '☀️';
+            };
+            sync();
+            btn.addEventListener('click', function () {
+              var cur = document.documentElement.getAttribute('data-theme');
+              var next = cur === 'dark' ? 'light' : 'dark';
+              document.documentElement.setAttribute('data-theme', next);
+              try { localStorage.setItem('sl-docs-theme', next); } catch (e) {}
+              sync();
+            });
+          });
+        },
+        // Hide loading spinner once content is rendered
+        function (hook) {
+          hook.doneEach(function () {
+            setTimeout(function () {
+              document.querySelectorAll('.loading, .sidebar-loading, .sidebar [class*="loading"]')
+                .forEach(function (el) { el.style.display = 'none'; });
             }, 100);
           });
         }
@@ -104,5 +295,13 @@
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+  <!-- Tabbed code examples -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <!-- Callouts / alert boxes -->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <!-- Extra Prism language grammars -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
 </body>
 </html>

@@ -2,6 +2,14 @@
 
 > Public API documentation to access player, clan, map, and asset data from Stumble Guys.
 
+> [!WARNING]
+> **API key registration is currently closed.** The maximum number of API keys has already been reached, so no new keys are being issued at this time. Development focus has shifted to building the **Stumble Labs website**.
+
+> [!NOTE]
+> **About this project.** This API is still in a testing phase and runs as a controlled environment. It is a **voluntary, community-driven project by Dasw** and is **not affiliated with, endorsed by, or associated with Scopely**, nor with anyone officially involved in producing or managing Stumble Guys.
+>
+> Because it operates on top of data and scopes ultimately controlled by Scopely, fields and behavior can change at any time without notice, so parts of this documentation may occasionally be out of date.
+
 ## Getting Started
 
 New to the API? Start with the [Quick Start Guide](/getting-started).
@@ -22,7 +30,7 @@ https://api.stumblelabs.net/api
 
 Most endpoints require an API key in the `x-api-key` header.
 
-To obtain an API key, contact someone from Stumble Labs
+> New API key registration is currently closed (key limit reached).
 
 [Learn more about authentication →](/authentication)
 
