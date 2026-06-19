@@ -55,10 +55,21 @@ All responses follow the standard format:
 - [Search Player](/players/search) - Search for a player by userId or username
 - [Search by Discord ID](/players/search-discord) - Search player by Discord ID
 
+### Player Verification
+- [Overview & Flow](/player-verification) - How player verification works
+
 ### Clans
 - [Clan Schema](/clans/schema) - Standard clan data structure
 - [Search Clans](/clans/search) - Search clans by name
 - [Get Clan by ID](/clans/get-by-id) - Complete clan data
+- [Recommended Clans](/clans/recommended) - Suggested clans to join
+- [Clan Leaderboard](/clans/leaderboard) - Top clans by crowns or trophies
+- [Current Season](/clans/season-current) - Active clan season details
+- [List Seasons](/clans/seasons) - All clan seasons
+- [Missions Today](/clans/missions-today) - Daily clan missions
+- [Member Season XP](/clans/member-season-xp) - A member's season XP contribution
+- [Member History](/clans/member-history) - Join, leave and role change events
+- [Snapshots](/clans/snapshots) - Historical clan snapshots
 
 ### Maps
 - [Map Schema](/maps/schema) - Standard map data structure
@@ -69,9 +80,21 @@ All responses follow the standard format:
 ### Leaderboards
 - [Get Ranked Leaderboard](/leaderboards/ranked) - Top ranked players for current season
 
+### Classic Tournaments
+- [Tournament Schema](/tournaments/schema) - Standard tournament data structure
+- [List Tournaments](/tournaments/list) - Paginated list with filtering and sorting
+- [Get Tournament by ID](/tournaments/get-by-id) - Complete tournament data
+- [List Seasons](/tournaments/seasons) - Distinct season parts in the archive
+- [Stats](/tournaments/stats) - Aggregate tournament statistics
+- [Tournaments Won by Player](/tournaments/winners-by-player) - Wins for a specific player
+- [Winners Leaderboard](/tournaments/leaderboard-winners) - Player ranking by tournament wins
+
 ### Assets
 - [Asset Schema](/assets/schema) - Standard asset structure and reference
-- [Search Asset](/assets/search) - Information about skins, emotes, etc.
+- [Get Asset by ID](/assets/search) - Look up a single asset by its ID
+- [List by Type](/assets/by-type) - Assets filtered by type
+- [Search by Name](/assets/search-by-name) - Find assets by name
+- [Latest Assets](/assets/latest) - Recently added assets
 - [Get Allowed Assets](/assets/allowed) - List all available assets
 
 ## Rate Limiting
