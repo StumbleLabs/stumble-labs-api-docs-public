@@ -50,6 +50,11 @@ All responses follow the standard format:
 
 ## Endpoints
 
+### In-game
+- [Get Room](/in-game/get-room) - Live state of a party room (players, config, maps)
+- [Live Game Stats](/in-game/live-game) - Live concurrency and room stats by region
+- [Available Maps](/in-game/maps) - Map ID to friendly name reference
+
 ### Players
 - [Player Schema](/players/schema) - Standard player data structure
 - [Search Player](/players/search) - Search for a player by userId or username

@@ -2,6 +2,10 @@
 * [Getting Started](/getting-started)
 * [Authentication](/authentication)
 * [Status Codes](/errors)
+* **In-game**
+  * [Get Room](/in-game/get-room)
+  * [Live Game Stats](/in-game/live-game)
+  * [Available Maps](/in-game/maps)
 * **Players**
   * [Player Schema](/players/schema)
   * [Search Player](/players/search)
