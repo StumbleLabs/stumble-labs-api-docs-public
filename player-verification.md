@@ -89,7 +89,7 @@ The challenge is valid until `expiresAt` (8 minutes).
 If you call it again for the same player before the current challenge expires (or is
 verified), you get the **same token and target skin** back, with `"reused": true`
 in the response - no duplicate challenge is created. This keeps the target stable
-even if you retry, and avoids spamming the upstream lookup.
+even if you retry, and avoids redundant lookups.
 
 ### 2. Poll the status
 

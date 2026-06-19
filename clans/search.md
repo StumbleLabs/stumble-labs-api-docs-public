@@ -49,7 +49,8 @@ curl -X POST "https://api.stumblelabs.net/api/clans/search" \
 					"backgroundId": "option1",
 					"foregroundId": "option1",
 					"colourSchemeId": "option01",
-					"level": 2
+					"level": 2,
+					"emblemUrl": "https://cdn.stumblelabs.net/emblems/..."
 				},
 				"memberCount": 50,
 				"memberCapacity": 50,

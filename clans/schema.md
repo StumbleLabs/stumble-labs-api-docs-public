@@ -33,6 +33,7 @@ Clan data follows this standard structure:
 | `foregroundId` | string | Logo foreground ID (e.g., "option3") |
 | `colourSchemeId` | string | Color scheme ID (e.g., "option10") |
 | `level` | integer | Logo level (1-5) |
+| `emblemUrl` | string | Rendered emblem image URL, derived from the logo fields. Present on clan objects returned by the API |
 
 ### members[]
 

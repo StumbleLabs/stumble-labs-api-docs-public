@@ -176,7 +176,8 @@ print(data)
 			"backgroundId": "option1",
 			"foregroundId": "option3",
 			"colourSchemeId": "option10",
-			"level": 3
+			"level": 3,
+			"emblemUrl": "https://cdn.stumblelabs.net/emblems/..."
 		},
 		"memberCount": 4,
 		"memberCapacity": 50,
