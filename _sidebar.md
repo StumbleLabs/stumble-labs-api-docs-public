@@ -10,6 +10,7 @@
   * [Player Schema](/players/schema)
   * [Search Player](/players/search)
   * [Search by Discord ID](/players/search-discord)
+  * [Username History](/players/usernames)
 * **Player Verification**
   * [Overview & Flow](/player-verification)
 * **Clans**

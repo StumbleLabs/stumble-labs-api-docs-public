@@ -59,6 +59,7 @@ All responses follow the standard format:
 - [Player Schema](/players/schema) - Standard player data structure
 - [Search Player](/players/search) - Search for a player by userId or username
 - [Search by Discord ID](/players/search-discord) - Search player by Discord ID
+- [Username History](/players/usernames) - Past usernames a player has used
 
 ### Player Verification
 - [Overview & Flow](/player-verification) - How player verification works
