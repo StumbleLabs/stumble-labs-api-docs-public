@@ -42,7 +42,7 @@ API keys have different access levels that determine which data is returned:
 ```
 
 **Level 1+ (Basic/Premium/Admin):**
-Includes all the above data + inventory, emotes, xpRoadInfo, usernameHistory, etc.
+Includes all the above data + inventory, emotes, xpRoadInfo, etc.
 
 ## Rate Limiting
 

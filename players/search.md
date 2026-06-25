@@ -144,12 +144,6 @@ print(data)
 			"currentSeasonId": "LIVE_RANKED_SEASON_17",
 			"currentTierIndex": 0
 		},
-		"usernameHistory": [
-			"<#0bf>Dasw",
-			"<#39e>dasw",
-			"<#39e>dasw45"
-		],
-		"maps": [],
 		"clan": {
 			"clanId": "01K1JZ400449Q1TZERE9E719Y1",
 			"name": "Devs",
@@ -220,5 +214,6 @@ Main player object. See [Player Schema](/players/schema) for all fields and nest
 ## Notes
 
 - Returned data may vary depending on your API key's `accessLevel`
-- The `maps` field is deprecated and always returns an empty array
+- This endpoint no longer returns the `usernameHistory` field. To get a player's past usernames, use [Username History](/players/usernames) (`GET /live/users/:userId/usernames`)
+- This endpoint no longer returns the `maps` field
 - The `clan` field can be `null` if the player is not in a clan

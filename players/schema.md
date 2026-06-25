@@ -89,7 +89,6 @@ When a player is in a clan, a simplified clan object is included. For full clan 
 
 Depending on the API key's `accessLevel`, additional fields may be present:
 
-- `usernameHistory` - Array of previous usernames
 - `xpRoadProgress` - Detailed XP road progress
 - `actionEmotes` - Equipped action emotes
 - `inventory` - Player inventory
@@ -159,7 +158,7 @@ Player data appears in various API responses:
 
 - The `userName` field may contain HTML color codes (e.g., `<#0bf>Dasw`)
 - The `clan` field can be `null` if the player is not in a clan
-- The `maps` field is deprecated and always returns an empty array
+- Player responses no longer include the `usernameHistory` or `maps` fields. For a player's past usernames, use [Username History](/players/usernames)
 - Returned data may vary depending on your API key's `accessLevel`
 - The `skinInformation` object follows the [Asset Schema](/assets/schema)
 
