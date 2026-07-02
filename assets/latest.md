@@ -22,7 +22,7 @@ GET /live/assets/latest
 | Param | Type | Required | Default | Description |
 |-------|------|----------|---------|-------------|
 | `limit` | integer | No | `4` | How many to return (max `500`) |
-| `type` | string | No | — | Restrict to one type: `skins`, `footsteps`, `emotes`, `animations` |
+| `type` | string | No | — | Restrict to one type: `skins`, `footsteps`, `emotes`, `animations`, `action-emotes` |
 
 ## Request Example
 

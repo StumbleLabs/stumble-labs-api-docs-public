@@ -1,6 +1,6 @@
 # Asset Schema
 
-Standard schema for assets (skins, emotes, animations, footsteps, victory animations) used across the API.
+Standard schema for assets (skins, emotes, animations, footsteps, victory animations, action emotes) used across the API.
 
 ## Asset Object Structure
 
@@ -17,6 +17,15 @@ All assets follow this standard structure:
 | `Category` | string | Asset category (see [Categories](#categories)) |
 | `IconUrl` | string | URL to the asset's preview icon |
 
+**Action emotes** additionally carry these fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Tier` | number | Action emote tier |
+| `RequiredShards` | number | Shards required to unlock/upgrade |
+| `InternalId` | number | Internal numeric ID used by the game |
+| `ReleaseDate` | string | Release date of the action emote |
+
 ## Asset ID Patterns
 
 Different asset types follow different ID patterns:
@@ -28,6 +37,7 @@ Different asset types follow different ID patterns:
 - **Emotes (new):** `Emote{number}_{Name}` (e.g., `Emote091_HangLooseHand`)
 - **Animations:** `animation_{name}` (e.g., `animation_thriller`)
 - **Victory:** `Victory{number}_{Name}` (e.g., `Victory030_Sobs`)
+- **Action emotes:** `AE{number}_{Name}` (e.g., `AE029_BlockWall`, `AE030_HookDash`)
 
 ## Rarities
 
@@ -56,6 +66,7 @@ Available asset categories:
 | `Emote` | Emotes (capitalized, new format) |
 | `animation` | Animations |
 | `Victory` | Victory animations |
+| `AE` | Action emotes |
 
 **Note:** Some categories appear in both lowercase and capitalized forms (e.g., `footsteps` and `Steps`, `emote` and `Emote`). This is due to historical naming conventions.
 

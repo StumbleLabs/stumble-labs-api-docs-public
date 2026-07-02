@@ -1,7 +1,7 @@
 # List Assets by Type
 
 Paginated list of all assets of a given type (skins, emotes, animations,
-footsteps).
+footsteps, action emotes).
 
 > See also: [Asset Schema](/assets/schema) | [Search Assets](/assets/search-by-name) | [Authentication](/authentication)
 
@@ -21,7 +21,7 @@ GET /live/assets/type/:type
 
 | Param | Type | Required | Description |
 |-------|------|----------|-------------|
-| `type` | string | Yes | One of: `skins`, `footsteps`, `emotes`, `animations` |
+| `type` | string | Yes | One of: `skins`, `footsteps`, `emotes`, `animations`, `action-emotes` |
 
 ## Query Parameters
 

@@ -1,6 +1,6 @@
 # Get Allowed Assets
 
-Returns all available assets (skins, emotes, animations, footsteps, victory animations) along with available categories, rarities, and versions.
+Returns all available assets (skins, emotes, animations, footsteps, victory animations, action emotes) along with available categories, rarities, and versions.
 
 > 💡 **Tip:** All assets returned here can be searched individually for detailed information using the [Search Asset](/assets/search) endpoint with the asset `ID`.
 
@@ -62,7 +62,8 @@ print(data)
       "emote",
       "Emote",
       "animation",
-      "Victory"
+      "Victory",
+      "AE"
     ],
     "rarities": [
       "COMMON",
@@ -154,6 +155,19 @@ print(data)
         "Rarity": "LEGENDARY",
         "Category": "Victory",
         "IconUrl": "https://cdn.stumblelabs.net/victory/victory030_sobs/preview.png"
+      },
+      {
+        "ID": "AE029_BlockWall",
+        "FriendlyName": "Block Wall",
+        "Hidden": false,
+        "Version": "0.93",
+        "Rarity": "EPIC",
+        "Category": "AE",
+        "IconUrl": "https://cdn.stumblelabs.net/action-emotes/ae029_blockwall/preview.png",
+        "Tier": 1,
+        "RequiredShards": 10,
+        "InternalId": 9001,
+        "ReleaseDate": "2024-05-01"
       }
     ]
   }

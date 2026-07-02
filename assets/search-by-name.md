@@ -22,7 +22,7 @@ GET /live/assets/search
 | Param | Type | Required | Default | Description |
 |-------|------|----------|---------|-------------|
 | `q` | string | Yes | — | Search term (max 100 chars). Matches against `FriendlyName` **or** `ID` (case-insensitive substring) |
-| `type` | string | No | — | Restrict to one type: `skins`, `footsteps`, `emotes`, `animations` |
+| `type` | string | No | — | Restrict to one type: `skins`, `footsteps`, `emotes`, `animations`, `action-emotes` |
 | `page` | integer | No | `1` | 1-based page number |
 | `pageSize` | integer | No | `50` | Items per page (max `500`) |
 
