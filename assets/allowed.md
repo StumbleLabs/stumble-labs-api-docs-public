@@ -63,7 +63,7 @@ print(data)
       "Emote",
       "animation",
       "Victory",
-      "AE"
+      "actionEmotes"
     ],
     "rarities": [
       "COMMON",
@@ -162,7 +162,7 @@ print(data)
         "Hidden": false,
         "Version": "0.93",
         "Rarity": "EPIC",
-        "Category": "AE",
+        "Category": "actionEmotes",
         "IconUrl": "https://cdn.stumblelabs.net/action-emotes/ae029_blockwall/preview.png",
         "Tier": 1,
         "RequiredShards": 10,

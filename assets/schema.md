@@ -66,7 +66,7 @@ Available asset categories:
 | `Emote` | Emotes (capitalized, new format) |
 | `animation` | Animations |
 | `Victory` | Victory animations |
-| `AE` | Action emotes |
+| `actionEmotes` | Action emotes |
 
 **Note:** Some categories appear in both lowercase and capitalized forms (e.g., `footsteps` and `Steps`, `emote` and `Emote`). This is due to historical naming conventions.
 
