@@ -175,6 +175,18 @@ Values depend on the party. The most relevant keys:
 }
 ```
 
+A room code that is not exactly 6 characters is rejected before the room is looked up:
+
+```json
+{
+  "success": false,
+  "message": "Room code must be 6 characters long",
+  "data": {},
+  "errors": ["Room code must be 6 characters long"],
+  "status": 400
+}
+```
+
 ### 404 - Room Not Found
 
 ```json

@@ -1,5 +1,9 @@
 # Map Schema
 
+> ⚠️ **Deprecated — UGC Maps (Stumble Workshop)**
+>
+> The in-game custom map creator — known in-game as **Stumble Workshop** and shown as **UGC Maps** on StumbleLabs — has been **removed from Stumble Guys**. These endpoints only return **legacy data** kept for historical reference and are **no longer updated**.
+
 Standard schema for map data used across the API.
 
 ## Map Object Structure
@@ -95,7 +99,7 @@ There are two types of share codes:
 Map data appears in various API responses:
 
 1. **[Search Map](/maps/search)** - Returns complete map data with author, version, and metadata
-2. **[Search by Author](/maps/author)** - Returns simplified map objects in `maps[]` array
+2. **[Search by Author](/maps/author)** - Returns a **paginated** object: simplified map objects in `data.items[]`, plus `total`, `page`, `pageSize`, `totalPages`, `hasNext`, `hasPrev`
 3. **[Version History](/maps/versions)** - Returns simplified map object in `map` field, plus version history
 
 ## Example Map Object (Complete)

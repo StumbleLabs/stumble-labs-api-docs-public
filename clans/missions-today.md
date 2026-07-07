@@ -72,7 +72,16 @@ print(data)
         "description": "Win races as a clan",
         "endDate": "2026-06-19T10:00:00.000Z",
         "missionActive": true,
-        "rewards": []
+        "rewards": [
+          {
+            "min": 75,
+            "max": 75,
+            "type": "MISSION_CLAN_XP",
+            "typeInfo": "MISSION_CLAN_XP",
+            "chance": 100,
+            "source": ""
+          }
+        ]
       }
     ]
   },
@@ -98,7 +107,18 @@ print(data)
 | `description` | string\|null | Human-readable mission description |
 | `endDate` | string\|null | When the mission ends (ISO 8601) |
 | `missionActive` | boolean | Whether the mission is currently active |
-| `rewards` | array | Reward definitions for the mission |
+| `rewards` | array | Reward definitions for the mission (see below) |
+
+### missions[].rewards[]
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `min` | integer | Minimum reward amount |
+| `max` | integer | Maximum reward amount |
+| `type` | string | Reward type (e.g., `MISSION_CLAN_XP`, `CURRENCY`, `EMOTE`) |
+| `typeInfo` | string | Reward identifier/details for the given type |
+| `chance` | integer | Drop chance (percentage) |
+| `source` | string | Reward source (may be empty) |
 
 ## Notes
 

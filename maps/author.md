@@ -1,5 +1,9 @@
 # Search Maps by Author
 
+> ⚠️ **Deprecated — UGC Maps (Stumble Workshop)**
+>
+> The in-game custom map creator — known in-game as **Stumble Workshop** and shown as **UGC Maps** on StumbleLabs — has been **removed from Stumble Guys**. This endpoint only returns **legacy data** kept for historical reference and is **no longer updated**. Users who never created maps return `404` ("No maps found for this author.").
+
 Returns a list of maps previously searched in StumbleLabs related to a specific user. This indicates that the returned maps were previously searched and associated with the user.
 
 > See also: [Search Map](/maps/search) | [Version History](/maps/versions)
@@ -71,7 +75,7 @@ print(data)
 	"success": true,
 	"message": "Maps retrieved successfully.",
 	"data": {
-		"maps": [
+		"items": [
 			{
 				"mapId": "d2667c74-54ae-4a56-bdc8-47aa5db426b8",
 				"mapShareCode": "2051-0533-6189",
@@ -85,7 +89,13 @@ print(data)
 				},
 				"latestVersion": null
 			}
-		]
+		],
+		"total": 1,
+		"page": 1,
+		"pageSize": 50,
+		"totalPages": 1,
+		"hasNext": false,
+		"hasPrev": false
 	},
 	"errors": [],
 	"status": 200
@@ -94,7 +104,21 @@ print(data)
 
 ## Response Fields
 
-### data.maps[]
+The `data` object is **paginated**. The maps are inside the `items` array, alongside pagination metadata.
+
+### data
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `items` | array | Array of map objects (see below) |
+| `total` | integer | Total number of maps for this author |
+| `page` | integer | Current page number (1-based) |
+| `pageSize` | integer | Number of items per page |
+| `totalPages` | integer | Total number of pages |
+| `hasNext` | boolean | Whether a next page exists |
+| `hasPrev` | boolean | Whether a previous page exists |
+
+### data.items[]
 
 Array of maps associated with the author. Each map follows a simplified version of the standard [Map Schema](/maps/schema) (without `author`, `version`, and `metadata` fields). See the schema documentation for complete field descriptions.
 

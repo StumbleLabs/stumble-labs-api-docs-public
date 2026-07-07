@@ -1,5 +1,9 @@
 # Search Map
 
+> ⚠️ **Deprecated — UGC Maps (Stumble Workshop)**
+>
+> The in-game custom map creator — known in-game as **Stumble Workshop** and shown as **UGC Maps** on StumbleLabs — has been **removed from Stumble Guys**. This endpoint only served **legacy data** and currently returns HTTP `500`; it is effectively non-functional and no longer updated.
+
 Search for a map using the public share code or version share code. Returns complete map information, including author data, current version, and metadata.
 
 > See also: [Search by Author](/maps/author) | [Version History](/maps/versions) | [Authentication](/authentication)

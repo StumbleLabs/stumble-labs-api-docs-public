@@ -62,7 +62,7 @@ Standard schema for the classic tournament objects returned by the
 | `name` | string | Tournament display name |
 | `icon` | string \| null | Icon image URL |
 | `image` | string \| null | Banner image URL |
-| `themeColor` | string \| null | Hex color **without** `#` (e.g. `"0000ff"`) |
+| `themeColor` | string \| null | Hex color **with** leading `#` (e.g. `"#FF0000"`) |
 
 ### regions
 
@@ -182,7 +182,7 @@ and so on.
     "name": "SMOREKYLE",
     "icon": "IMAGE_URL_HERE",
     "image": null,
-    "themeColor": "0000ff"
+    "themeColor": "#0000ff"
   },
   "sponsor": null,
   "media": {
@@ -271,7 +271,7 @@ and so on.
 ## Notes
 
 - All timestamps are ISO 8601 (UTC).
-- `themeColor` is a hex color **without** the leading `#`.
+- `themeColor` is a hex color **with** the leading `#` (e.g. `"#FF0000"`).
 - `regions.primary` and `regions.all[]` use lowercase codes.
 - `winners.list` always represents the **champion team only**, not a top-N
   ranking. Per-player prize is approximately

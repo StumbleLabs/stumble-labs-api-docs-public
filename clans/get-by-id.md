@@ -181,7 +181,7 @@ print(data)
 			"foregroundId": "option3",
 			"colourSchemeId": "option10",
 			"level": 3,
-			"emblemUrl": "https://cdn.stumblelabs.net/emblems/..."
+			"emblemUrl": "https://cdn.stumblelabs.net/clubs/emblems/222/0103103.png"
 		},
 		"memberCount": 4,
 		"memberCapacity": 50,
@@ -247,6 +247,7 @@ Main clan object. See [Clan Schema](/clans/schema) for all fields and nested obj
   - `0` = Regular member
   - `1` = Administrator
   - `2` = Clan leader
+  - `3` = Observed in live responses but not officially documented (appears to be an elder/co-leader-style rank between admin and member)
 - The `clanXpContribution` shows how much XP each member contributed to the clan
 - The `description` field may be empty if the clan has no description set
 - The `joinPolicy` can have different values:

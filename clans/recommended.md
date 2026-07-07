@@ -84,7 +84,7 @@ print(data)
           "foregroundId": "option1",
           "colourSchemeId": "option01",
           "level": 2,
-          "emblemUrl": "https://cdn.stumblelabs.net/emblems/..."
+          "emblemUrl": "https://cdn.stumblelabs.net/clubs/emblems/222/0101012.png"
         },
         "memberCount": 42,
         "memberCapacity": 50,

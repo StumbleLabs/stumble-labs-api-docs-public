@@ -163,11 +163,11 @@ print(data)
         "Version": "0.93",
         "Rarity": "EPIC",
         "Category": "actionEmotes",
-        "IconUrl": "https://cdn.stumblelabs.net/action-emotes/ae029_blockwall/preview.png",
+        "IconUrl": "https://cdn.stumblelabs.net/action_emotes/ae029_blockwall/preview.png",
         "Tier": 1,
         "RequiredShards": 10,
         "InternalId": 9001,
-        "ReleaseDate": "2024-05-01"
+        "ReleaseDate": "2024-05-01T00:00:00Z"
       }
     ]
   }
