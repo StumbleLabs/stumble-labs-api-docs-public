@@ -9,6 +9,7 @@
 * **Players**
   * [Player Schema](/players/schema)
   * [Search Player](/players/search)
+  * [Get Player Profiles (Batch)](/players/profiles)
   * [Search by Discord ID](/players/search-discord)
   * [Username History](/players/usernames)
 * **Player Verification**
