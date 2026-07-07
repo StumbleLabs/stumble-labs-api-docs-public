@@ -35,6 +35,7 @@
   * [Version History](/maps/versions)
 * **Leaderboards**
   * [Get Ranked Leaderboard](/leaderboards/ranked)
+  * [Players Leaderboard](/leaderboards/players)
 * **Classic Tournaments**
   * [Tournament Schema](/tournaments/schema)
   * [List Tournaments](/tournaments/list)
