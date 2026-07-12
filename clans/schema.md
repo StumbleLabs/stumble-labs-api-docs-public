@@ -67,9 +67,9 @@ Member's role in the clan:
 | Value | Description |
 |-------|-------------|
 | `0` | Member |
-| `1` | Admin |
-| `2` | Leader |
-| `3` | Observed in live responses but not officially documented (appears to be an elder/co-leader-style rank) |
+| `1` | Captain |
+| `2` | Co-Captain |
+| `3` | Moderator  |
 
 #### clanXpContribution
 
