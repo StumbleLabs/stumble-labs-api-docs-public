@@ -5,6 +5,7 @@
 * **In-game**
   * [Get Room](/in-game/get-room)
   * [Live Game Stats](/in-game/live-game)
+  * [Home Feed](/in-game/home)
   * [Available Maps](/in-game/maps)
 * **Players**
   * [Player Schema](/players/schema)
