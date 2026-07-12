@@ -171,6 +171,7 @@ Rows where **Name** is `—` have no distinct friendly name — for those, the A
 | `level24_streamtiles_teams` | Rush Hour Teams |
 | `level25_collectcarrots` | Treasure Island |
 | `level26_JungleTemple` | Turbo Temple |
+| `level27_orange` | Blaster Base |
 | `level28_ufo` | Abduction Avenue |
 | `level28_ufo_teams` | Abduction Avenue Teams |
 | `level29_rollingtowers` | Burrito Bonanza |

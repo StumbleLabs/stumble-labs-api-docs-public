@@ -166,7 +166,7 @@ Requested asset information. Follows the standard [Asset Schema](/assets/schema)
 | `ID` | string | Unique asset ID (e.g., "SKIN999") |
 | `FriendlyName` | string | Asset friendly name |
 | `Hidden` | boolean | Whether the asset is hidden |
-| `NoGacha` | boolean | Whether the asset is not available in gachas |
+| `NoGacha` | boolean | Whether the asset is not available in gachas (present on all types **except** action emotes) |
 | `Version` | string | Asset version |
 | `Rarity` | string | Asset rarity (see [Asset Schema - Rarities](/assets/schema#rarities)) |
 | `Category` | string | Asset category (see [Asset Schema - Categories](/assets/schema#categories)) |
