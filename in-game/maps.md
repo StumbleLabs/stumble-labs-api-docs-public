@@ -18,7 +18,7 @@ Rows where **Name** is `—` have no distinct friendly name — for those, the A
 | `eventlevel10_terrortumble` | Stumble Trouble |
 | `eventlevel10_terrortumble_teams` | Stumble Trouble Teams |
 | `eventlevel12_collectionRocket` | SkyRocket Royale |
-| `eventlevel13_block_legendary` | Block Dash Legendary |
+| `eventlevel13_block_legendary` | Legendary Block Dash |
 | `eventlevel13_block_legendary_aprilfools` | Block Dash Speed Legendary |
 | `eventlevel13_block_legendary_teams` | Block Dash Legendary Teams |
 | `eventlevel13_block_legendary_teams_collectable` | — |
