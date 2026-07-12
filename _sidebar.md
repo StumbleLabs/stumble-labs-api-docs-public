@@ -9,8 +9,12 @@
 * **Players**
   * [Player Schema](/players/schema)
   * [Search Player](/players/search)
+  * [Get Player Profiles (Batch)](/players/profiles)
+  * [Search Players by Name](/players/player-search)
   * [Search by Discord ID](/players/search-discord)
   * [Username History](/players/usernames)
+  * [Ranked Score History](/players/ranked-history)
+  * [Ranked Encounters](/players/encounters)
 * **Player Verification**
   * [Overview & Flow](/player-verification)
 * **Clans**
@@ -32,6 +36,7 @@
   * [Version History](/maps/versions)
 * **Leaderboards**
   * [Get Ranked Leaderboard](/leaderboards/ranked)
+  * [Players Leaderboard](/leaderboards/players)
 * **Classic Tournaments**
   * [Tournament Schema](/tournaments/schema)
   * [List Tournaments](/tournaments/list)
