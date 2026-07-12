@@ -1,5 +1,9 @@
 # Map Version History
 
+> ⚠️ **Deprecated — UGC Maps (Stumble Workshop)**
+>
+> The in-game custom map creator — known in-game as **Stumble Workshop** and shown as **UGC Maps** on StumbleLabs — has been **removed from Stumble Guys**. These endpoints only return **legacy data** kept for historical reference and are **no longer updated**.
+
 Returns the version history of a map. Versions are stored via snapshots of map searches made in StumbleLabs. To play a specific version of a map, you can use the `versionShareCode`.
 
 > See also: [Search Map](/maps/search) | [Search by Author](/maps/author)
@@ -80,17 +84,22 @@ print(data)
 		},
 		"versions": [
 			{
-				"versionId": "896105da-a552-49aa-9377-372d9ea38739",
+				"versionId": "2d7911c7-90fe-460f-9df2-8da34910e6df",
 				"versionShareCode": "0907-3002-5681",
 				"version": 106718224,
 				"changes": {
 					"name": null,
 					"description": null,
-					"type": null
+					"type": null,
+					"content": {
+						"isInitialVersion": true
+					}
 				},
 				"stats": {
 					"totalProps": 164,
-					"uniqueProps": 164
+					"uniqueProps": 164,
+					"objectsCount": 164,
+					"objectsVersion": "2"
 				}
 			}
 		],
@@ -128,6 +137,7 @@ Indicates which fields were changed in this version relative to the previous one
 | `name` | string \| null | New name (null if unchanged) |
 | `description` | string \| null | New description (null if unchanged) |
 | `type` | string \| null | New type (null if unchanged) |
+| `content` | object | Content-change info. For the first snapshot contains `{ "isInitialVersion": true }` |
 
 ### stats
 
@@ -137,6 +147,8 @@ Map version statistics.
 |-------|------|-------------|
 | `totalProps` | integer | Total props/objects in the map |
 | `uniqueProps` | integer | Number of unique props (no duplicates) |
+| `objectsCount` | integer | Total objects count (mirrors `totalProps`) |
+| `objectsVersion` | string \| null | Blob content schema version (may be `null`) |
 
 ### data.totalVersions
 

@@ -98,7 +98,7 @@ print(data)
 | `endDate` | string | Season end date (ISO 8601) |
 | `totalPoints` | integer | Total points available in the season |
 | `milestones` | array | Reward milestones, sorted by `pointsToClaim` ascending |
-| `emblemLeveling` | object\|array\|null | Emblem leveling configuration (may be `null`) |
+| `emblemLeveling` | array\|null | Emblem leveling configuration: array of `{ "Level": integer, "MilestoneId": string }` entries mapping each emblem level to its unlocking milestone. May be `null` for some seasons |
 
 ### milestones[]
 

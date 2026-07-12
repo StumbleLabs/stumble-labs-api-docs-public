@@ -256,11 +256,11 @@ See [Asset Schema - Categories](/assets/schema#categories) for the complete list
 {
   "success": false,
   "message": "Asset not found",
-  "errors": [],
   "data": {
-    "asset": null,
     "similar": []
-  }
+  },
+  "errors": [],
+  "status": 404
 }
 ```
 

@@ -67,8 +67,9 @@ Member's role in the clan:
 | Value | Description |
 |-------|-------------|
 | `0` | Member |
-| `1` | Admin |
-| `2` | Leader |
+| `1` | Captain |
+| `2` | Co-Captain |
+| `3` | Moderator  |
 
 #### clanXpContribution
 
@@ -114,7 +115,8 @@ Clan data appears in various API responses:
     "backgroundId": "option1",
     "foregroundId": "option3",
     "colourSchemeId": "option10",
-    "level": 3
+    "level": 3,
+    "emblemUrl": "https://cdn.stumblelabs.net/clubs/emblems/222/0103103.png"
   },
   "members": [
     {
@@ -156,7 +158,8 @@ Used in search results and player data:
     "backgroundId": "option1",
     "foregroundId": "option3",
     "colourSchemeId": "option10",
-    "level": 3
+    "level": 3,
+    "emblemUrl": "https://cdn.stumblelabs.net/clubs/emblems/222/0103103.png"
   },
   "memberCount": 4,
   "memberCapacity": 50,

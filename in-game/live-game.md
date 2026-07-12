@@ -63,21 +63,23 @@ print(data["data"])
 ```json
 {
   "success": true,
-  "message": "OK",
+  "message": "Region Information Success",
   "data": {
     "success": true,
-    "message": "OK",
+    "message": "Region Information Success",
     "retrievedAtUtc": "2026-06-19T18:42:11Z",
     "regions": {
       "sa": {
         "success": true,
+        "returnCode": 0,
         "retrievedAtUtc": "2026-06-19T18:42:11Z",
         "region": "sa",
         "regionInfo": {
           "code": "sa",
           "displayName": "South America",
-          "serverLocation": "São Paulo"
+          "serverLocation": "São Paulo, Brazil"
         },
+        "dataSource": "masterServerRegionTotals_azure",
         "ccu": {
           "playersInGameRooms": 4210,
           "playersOnMasterNotInRoom": 380,
@@ -134,9 +136,11 @@ print(data["data"])
 | Field | Type | Description |
 |-------|------|-------------|
 | `success` | bool | Whether stats for this region were retrieved |
+| `returnCode` | int | Provider return code for this region's fetch (`0` = success) |
 | `retrievedAtUtc` | string | UTC timestamp for this region's snapshot |
 | `region` | string | Region code (e.g. `sa`, `us`, `eu`) |
 | `regionInfo` | object | Region metadata: `code`, `displayName`, `serverLocation` |
+| `dataSource` | string | Origin of the statistics (e.g. `masterServerRegionTotals_azure`) |
 | `ccu` | object | Concurrency breakdown (see below) |
 | `rooms` | object | `totalRoomsInRegion` — number of active rooms in the region |
 | `derived` | object | `avgPlayersPerRoom` — average players per room, or `null` when there are no rooms |
