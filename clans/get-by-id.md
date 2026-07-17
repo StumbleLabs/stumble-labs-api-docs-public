@@ -243,11 +243,11 @@ Main clan object. See [Clan Schema](/clans/schema) for all fields and nested obj
 
 - The `clanId` must be a valid ULID (e.g., "01K1JZ400449Q1TZERE9E719Y1")
 - The member list includes complete profiles for each player
-- The `role` field indicates the member's position in the clan:
-  - `0` = Regular member
-  - `1` = Administrator
-  - `2` = Clan leader
-  - `3` = Observed in live responses but not officially documented (appears to be an elder/co-leader-style rank between admin and member)
+- The `role` field indicates the member's position in the clan (see [Clan Schema - role](/clans/schema#role)):
+  - `0` = Member
+  - `1` = Captain
+  - `2` = Co-Captain
+  - `3` = Moderator
 - The `clanXpContribution` shows how much XP each member contributed to the clan
 - The `description` field may be empty if the clan has no description set
 - The `joinPolicy` can have different values:

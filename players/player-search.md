@@ -20,7 +20,7 @@ GET /live/users/search/player-search
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `string` | string | Yes | Search query. Case-insensitive substring match on the username. **Minimum 3 characters.** |
+| `string` | string | Yes | Search query. Case-insensitive **prefix** match on the player's display name (with color codes stripped). **Minimum 3 characters.** |
 
 ## Request Example
 
@@ -85,7 +85,7 @@ print(data)
 
 ## Response Fields
 
-`data` is an **array** of up to **12** matching players (most relevant first). Each entry is a lightweight result:
+`data` is an **array** of up to **12** matching players (ordered roughly alphabetically by name, not by a relevance score). Each entry is a lightweight result:
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -113,7 +113,7 @@ Returned when `string` is missing or shorter than 3 characters.
 ## Notes
 
 - The query must be at least **3 characters** long.
-- Matching is **case-insensitive** and matches the username as a substring.
-- At most **12** results are returned; there is no pagination.
+- Matching is **case-insensitive** and is a **prefix** match on the color-code-stripped display name (e.g. `hen` matches "Henry", but `enry` does not).
+- At most **12** results are returned; there is no pagination and no `limit` parameter (any `limit` you pass is ignored).
 - This endpoint returns lightweight data only. To get trophies, crowns, rank, clan, etc., pass the returned `userid` to [Search Player](/players/search) (single) or [Get Player Profiles (Batch)](/players/profiles) (many at once).
 - On success the response envelope omits the `errors` field (present only on errors).

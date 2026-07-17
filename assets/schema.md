@@ -4,20 +4,25 @@ Standard schema for assets (skins, emotes, animations, footsteps, victory animat
 
 ## Asset Object Structure
 
-All assets follow this standard structure:
+All assets share these fields:
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `ID` | string | Unique asset ID (e.g., "SKIN1", "footsteps_banana", "Victory030_Sobs") |
 | `FriendlyName` | string | Human-readable asset name |
 | `Hidden` | boolean | Whether the asset is hidden (may not appear in some interfaces) |
-| `NoGacha` | boolean | Whether the asset is not available in gachas |
 | `Version` | string | Game version when the asset was introduced |
 | `Rarity` | string | Asset rarity (see [Rarities](#rarities)) |
 | `Category` | string | Asset category (see [Categories](#categories)) |
 | `IconUrl` | string | URL to the asset's preview icon |
 
-**Action emotes** additionally carry these fields:
+All asset types **except action emotes** additionally carry:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `NoGacha` | boolean | Whether the asset is not available in gachas |
+
+**Action emotes** (Category `actionEmotes`, IDs starting with `AE`) do **not** have `NoGacha`. Instead they carry these fields:
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -97,7 +102,7 @@ Assets appear in various API responses:
 
 - The `asset_id` is case-insensitive when searching (can be "SKIN999" or "skin999")
 - The `Hidden` field indicates assets that may not appear in game interfaces but are still valid
-- Assets with `NoGacha: true` cannot be obtained through gacha systems
+- Assets with `NoGacha: true` cannot be obtained through gacha systems (the `NoGacha` field is absent on action emotes)
 - Version codes may include patch versions (e.g., "0.93.5", "0.86.6")
 - Icon URLs point to CDN-hosted preview images
 - All assets returned in [Get Allowed Assets](/assets/allowed) can be searched individually using [Search Asset](/assets/search) with the asset `ID`

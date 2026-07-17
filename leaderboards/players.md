@@ -65,7 +65,7 @@ print(data)
 ```json
 {
 	"success": true,
-	"message": "Leaderboard fetched successfully.",
+	"message": "Player leaderboard by trophies fetched successfully.",
 	"data": {
 		"sort": "trophies",
 		"country": "IT",
@@ -129,8 +129,8 @@ print(data)
 | `country` | string | Player country code (ISO 3166-1 alpha-2) |
 | `trophies` | integer | Total trophies |
 | `crowns` | integer | Total crowns |
-| `skin` | string | Current skin ID |
-| `nativePlatformName` | string | Platform (`steam`, `android`, `ios`, `webgl`) |
+| `skin` | string \| null | Current skin ID (`null` if none) |
+| `nativePlatformName` | string \| null | Platform (`steam`, `android`, `ios`, `webgl`), or `null` |
 
 ## Errors
 
@@ -148,8 +148,27 @@ Returned when `sort` is set to a value other than `trophies` or `crowns`.
 }
 ```
 
+`sort` is **case-sensitive** (`Crowns` → `400`).
+
+### 401 - Unauthorized
+
+Returned when the `x-api-key` header is present but not recognized.
+
+```json
+{
+  "success": false,
+  "message": "Invalid API key",
+  "data": {},
+  "errors": ["Unauthorized"],
+  "status": 401
+}
+```
+
 ## Notes
 
-- The leaderboard is capped at the **top 100**; there is no real pagination (`pageSize` is always 100 and `totalPages` is always 1).
-- `sort` accepts only `trophies` or `crowns`.
+- The `message` field is **dynamic** — it reflects the active sort, e.g. `"Player leaderboard by trophies fetched successfully."` or `"Player leaderboard by crowns fetched successfully."`
+- The leaderboard is capped at the **top 100**; there is no real pagination (`pageSize` is always 100 and `totalPages` is always 1). `page`, `pageSize`, `limit`, `offset` and similar params are ignored.
+- `sort` accepts only `trophies` or `crowns` (case-sensitive).
+- `country` is **case-insensitive** (`it` ≡ `IT`); `data.country` echoes back the value you passed, verbatim.
+- A `country` with no players returns `200` with `items: []` and `total: 0` — not an error.
 - Provide `country` for a single country's leaderboard; omit it for the global leaderboard.

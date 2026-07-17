@@ -111,10 +111,11 @@ print(data)
 
 ## Response Fields
 
-`data` is an **array** of player objects, one per requested ID, in the **same order** as `userIds`. Each object follows the standard [Player Schema](/players/schema).
+`data` is an **array** of player objects. Each object follows the standard [Player Schema](/players/schema) (the sample above is abbreviated).
 
+- **Order is server-determined, not input order.** It is stable for a given set of IDs but does not follow the order you passed. Always match results back to requests by `userId` — do not rely on positional alignment.
+- **Unresolvable IDs are silently dropped.** IDs that don't resolve to a player are omitted entirely — there is no placeholder and no `isFallback: true` entry — so `data.length` can be **less than** the number of IDs you sent (an all-unknown batch returns `200` with an empty `data` array).
 - Duplicated IDs are returned as duplicates (not de-duplicated).
-- Unknown-but-valid IDs may return a placeholder profile flagged with `isFallback: true`.
 
 ## Errors
 
@@ -139,7 +140,9 @@ Other validation messages include:
 
 ## Notes
 
-- Up to **32** IDs per request.
-- Results preserve the order of `userIds`; duplicates are returned as-is.
-- The endpoint occasionally returns a transient `500`; retrying usually succeeds.
+- Up to **32** IDs per request (a `userIds` array of `33`+ returns `400`).
+- **Match results by `userId`** — response order is server-determined and does not track input order.
+- Unresolvable IDs are dropped from the response, so `data.length` may be smaller than the number of IDs requested.
+- Duplicates are returned as-is (not de-duplicated).
+- The endpoint may return a transient `500` on otherwise-valid requests; retrying usually succeeds.
 - This is the most efficient way to fetch many profiles at once (one call instead of one per player).

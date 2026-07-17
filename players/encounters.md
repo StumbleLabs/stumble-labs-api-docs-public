@@ -27,6 +27,7 @@ GET /live/users/search/encounters/{userId}
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `seasonId` | string | Yes | Ranked season ID (e.g. `LIVE_RANKED_SEASON_24`) |
+| `limit` | integer | No | Max opponents to return. Range `1`–`200`, default `50`. Out-of-range values return `400`. |
 
 ## Request Example
 
@@ -96,7 +97,7 @@ print(data)
 }
 ```
 
-> The `opponents` array is truncated above for brevity — it contains up to **50** entries, ordered by `encounterCount` (most-faced first).
+> The `opponents` array is truncated above for brevity — it contains up to `limit` entries (default **50**, max **200**), ordered by `encounterCount` (most-faced first).
 
 ## Response Fields
 
@@ -106,9 +107,10 @@ print(data)
 |-------|------|-------------|
 | `userId` | integer | The queried player ID |
 | `seasonId` | string | The ranked season the data refers to |
-| `uniqueOpponents` | integer | Number of distinct opponents returned (up to 50) |
-| `totalEncounters` | integer | Total number of ranked encounters that season |
+| `uniqueOpponents` | integer | Number of opponents in the returned slice — equals `opponents.length` (bounded by `limit`), **not** a season-wide distinct count |
+| `totalEncounters` | integer | Sum of `encounterCount` across the **returned** opponents only — it scales with `limit`, so it is not the season-wide encounter total |
 | `opponents` | array | Top opponents by encounter count (see below) |
+| `fromCache` | boolean | Present and `true` only when the response was served from cache; omitted otherwise |
 
 ### data.opponents[]
 
@@ -118,12 +120,12 @@ print(data)
 | `userName` | string | Opponent's username (may contain HTML color codes) |
 | `country` | string | Opponent's country code (ISO 3166-1 alpha-2) |
 | `skin` | string | Opponent's current skin ID |
-| `currentRankId` | integer | Opponent's current ranked tier ID |
+| `currentRankId` | integer \| null | Opponent's current ranked tier ID (`null` if the opponent is not currently ranked) |
 | `encounterCount` | integer | How many times this opponent was faced |
 | `firstEncounterAt` | string | ISO 8601 time of the first encounter |
 | `lastEncounterAt` | string | ISO 8601 time of the most recent encounter |
 | `opponentPeakScore` | integer | Opponent's peak ranked score that season |
-| `opponentBestRank` | integer | Opponent's best leaderboard rank that season |
+| `opponentBestRank` | integer | Opponent's best leaderboard rank that season — **0-indexed** (`0` = rank #1), matching the ranked leaderboard |
 
 ## Players with no encounters
 
@@ -149,7 +151,7 @@ A valid player with no ranked encounters in the given season returns `200` with 
 
 ### 400 - Validation Error
 
-Returned when `seasonId` is missing/empty, or `userId` is not a positive Int32 integer.
+Returned when `seasonId` is missing/empty, `limit` is out of range, or `userId` is not a positive Int32 integer. The `errors` array lists the specific failures, for example:
 
 ```json
 {
@@ -165,9 +167,16 @@ Returned when `seasonId` is missing/empty, or `userId` is not a positive Int32 i
 }
 ```
 
+Other validation messages you may see:
+
+- Empty `seasonId` (`?seasonId=`) → `"'seasonId' must not be empty."`
+- `limit` out of range (`0`, `-1`, `1000`, non-numeric) → `"'limit' must be an integer between 1 and 200."`
+- Invalid `userId` → `"'userId' must be a positive integer within the Int32 range."`
+
 ## Notes
 
-- `seasonId` is **required**.
-- The `opponents` list is capped at the top **50** opponents by `encounterCount`.
+- `seasonId` is **required**; `limit` is optional (default `50`, max `200`).
+- The `opponents` list is capped at `limit` opponents (default **50**, max **200**) by `encounterCount`.
+- `uniqueOpponents` and `totalEncounters` describe the **returned slice**, not the season as a whole — both grow as you raise `limit`.
 - An unknown season ID returns `200` with empty data (not a `404`).
 - Data is ranked-only; non-ranked players (or seasons with no ranked play) return empty structures.

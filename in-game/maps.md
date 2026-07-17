@@ -18,7 +18,7 @@ Rows where **Name** is `—` have no distinct friendly name — for those, the A
 | `eventlevel10_terrortumble` | Stumble Trouble |
 | `eventlevel10_terrortumble_teams` | Stumble Trouble Teams |
 | `eventlevel12_collectionRocket` | SkyRocket Royale |
-| `eventlevel13_block_legendary` | Block Dash Legendary |
+| `eventlevel13_block_legendary` | Legendary Block Dash |
 | `eventlevel13_block_legendary_aprilfools` | Block Dash Speed Legendary |
 | `eventlevel13_block_legendary_teams` | Block Dash Legendary Teams |
 | `eventlevel13_block_legendary_teams_collectable` | — |
@@ -171,6 +171,7 @@ Rows where **Name** is `—` have no distinct friendly name — for those, the A
 | `level24_streamtiles_teams` | Rush Hour Teams |
 | `level25_collectcarrots` | Treasure Island |
 | `level26_JungleTemple` | Turbo Temple |
+| `level27_orange` | Blaster Base |
 | `level28_ufo` | Abduction Avenue |
 | `level28_ufo_teams` | Abduction Avenue Teams |
 | `level29_rollingtowers` | Burrito Bonanza |
